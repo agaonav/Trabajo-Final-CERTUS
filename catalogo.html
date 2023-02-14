@@ -30,7 +30,39 @@
         <p>Precios validos para productos entre 01.03.2023 — 31.05.2023</p>
     </div>
 
-    <p><a class="btn btn-success btn-lg" href="registroCuenta.html">Registrar usuario</a></p>
+    <!-- Menú de opciones -->
+    <p>
+
+        <!-- Registrar usuario -->
+        <a class="btn btn-success btn-lg" href="registroCuenta.html">Registrar usuario</a>
+        
+        <!-- Ver carrito de compra -->
+        <a class="btn btn-success btn-lg" onclick="actualizarLista()" href="#" data-bs-toggle="modal" data-bs-target="#carritoCompra">
+            Ir al carrito
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+        </a>
+
+        <!-- Modal carrito de compra-->
+        <div class="modal fade" id="carritoCompra" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Carrito de compra</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="listaCarrito" class="modal-body">
+                        El carrito está vacio.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Realizar la compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </p>
 
     <!-- Productos -->
     <div id="Catalogo" class="container">
@@ -42,21 +74,21 @@
                 <img src="images/productos/LE060EL0HR4G9LPE.webp" width="100px">
                 <p><span class="oferta">S/ 220.00</span> - 50%</p>
                 <p class="precio">S/ 109.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
                 <h3>Impresora Multifuncional Epson EcoTank L3250</h3>
                 <img src="images/productos/LE060EL0HR4G9LPE.webp" width="100px">
                 <p><span class="oferta">S/ 1150.00</span> - 30%</p>
                 <p class="precio">S/ 769.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
                 <h3>Audífonos Gamer Kuiper Vsg Multiplataforma Ps4 Xbox</h3>
                 <img src="images/productos/XP764EL0DGME1LPE.webp" width="100px">
                 <p><span class="oferta">S/ 190.00</span> - 47%</p>
                 <p class="precio">S/ 99.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
 
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
@@ -64,63 +96,63 @@
                 <img src="images/productos/LE060EL0HR4G9LPE.webp" width="100px">
                 <p><span class="oferta">S/ 220.00</span> - 50%</p>
                 <p class="precio">S/ 109.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
                 <h3>Impresora Multifuncional Epson EcoTank L3250</h3>
                 <img src="images/productos/LE060EL0HR4G9LPE.webp" width="100px">
                 <p><span class="oferta">S/ 1150.00</span> - 30%</p>
                 <p class="precio">S/ 769.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
                 <h3>Audífonos Gamer Kuiper Vsg Multiplataforma Ps4 Xbox</h3>
                 <img src="images/productos/XP764EL0DGME1LPE.webp" width="100px">
                 <p><span class="oferta">S/ 190.00</span> - 47%</p>
                 <p class="precio">S/ 99.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
                 <h3>Xiaomi Camara Web Full Hd 1080p</h3>
                 <img src="images/productos/LE060EL0HR4G9LPE.webp" width="100px">
                 <p><span class="oferta">S/ 220.00</span> - 50%</p>
                 <p class="precio">S/ 109.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
                 <h3>Impresora Multifuncional Epson EcoTank L3250</h3>
                 <img src="images/productos/LE060EL0HR4G9LPE.webp" width="100px">
                 <p><span class="oferta">S/ 1150.00</span> - 30%</p>
                 <p class="precio">S/ 769.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
                 <h3>Impresora Multifuncional Epson EcoTank L3250</h3>
                 <img src="images/productos/LE060EL0HR4G9LPE.webp" width="100px">
                 <p><span class="oferta">S/ 1150.00</span> - 30%</p>
                 <p class="precio">S/ 769.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
                 <h3>Audífonos Gamer Kuiper Vsg Multiplataforma Ps4 Xbox</h3>
                 <img src="images/productos/XP764EL0DGME1LPE.webp" width="100px">
                 <p><span class="oferta">S/ 190.00</span> - 47%</p>
                 <p class="precio">S/ 99.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
                 <h3>Xiaomi Camara Web Full Hd 1080p</h3>
                 <img src="images/productos/LE060EL0HR4G9LPE.webp" width="100px">
                 <p><span class="oferta">S/ 220.00</span> - 50%</p>
                 <p class="precio">S/ 109.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
             <div class="producto col-12 col-sm-6 col-md-4 col-lg-3">
                 <h3>Impresora Multifuncional Epson EcoTank L3250</h3>
                 <img src="images/productos/LE060EL0HR4G9LPE.webp" width="100px">
                 <p><span class="oferta">S/ 1150.00</span> - 30%</p>
                 <p class="precio">S/ 769.00</p>
-                <p><a class="btn btn-primary" href="#"><span>🛒</span> Agregar a carrito</a></p>
+                <p><a class="btn btn-primary" href="#" onclick="addCart(this)"><span>🛒</span> Agregar a carrito</a></p>
             </div>
         </div>
     </div>
@@ -149,9 +181,47 @@
     <script src="js/bootstrap.js"></script>
 
     <script>
+
+        // Crear una cookie
+        var ObjetosSeleccionados = [];
+
+        // Función para el modal de promoción
         function primeraFuncion() {
             const modalEntrada = new bootstrap.Modal("#modalEntrada");
             modalEntrada.show();
+        }
+
+        // Función para los botones añadir carrito
+        function addCart(objeto){
+            // Obtener el elemento donde se encuetra
+            var contenedor = objeto.parentElement.parentElement;
+            // Datos del producto
+            var nombre = contenedor.getElementsByTagName("h3")[0];
+            var precio = contenedor.getElementsByTagName("p")[0];
+            var precioFinal = contenedor.getElementsByTagName("p")[1];
+            // Crear objeto
+            var producto = {
+                "nombre" : nombre.innerText,
+                "precio" : precio.innerText,
+                "precioFinal" : precioFinal.innerText
+            }
+            // Añadir al array de objetos
+            ObjetosSeleccionados.push(producto);
+        }
+
+        // Función actualizar lista
+        function actualizarLista(){
+            var lista = document.getElementById("listaCarrito");
+            // Crear el HTML
+            var texto = "";
+            ObjetosSeleccionados.forEach(element => {
+                texto = texto + "<div class='productoLista'>";
+                texto = texto + "<p>"+element.nombre+"</p>";
+                texto = texto + "<p>"+element.precio+"</p>";
+                texto = texto + "<p>"+element.precioFinal+"</p>";
+                texto = texto + "</div>";
+            });
+            lista.innerHTML = texto;
         }
     </script>
 </body>
